@@ -5,10 +5,10 @@
     "main": "server.js",
     "author": "Andrew Rohne",
     "dependencies": {
-        "body-parser": "^1.5.2",
-        "express": "~4.7.2",
-        "knex": "^0.16.3",
-        "method-override": "~2.1.2",
-        "morgan": "^1.9.0"
+        "body-parser": ">=1.5.2",
+        "express": "^4.16.4",
+        "knex": ">=0.16.3",
+        "method-override": ">=2.3.10",
+        "morgan": ">=1.9.0"
     }
 }
