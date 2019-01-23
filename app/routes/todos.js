@@ -4,19 +4,32 @@ const router = express.Router();
 //TODO: This has to go and be replaced with a connection to pgsql
 const inMemoryTodoDB = [
     {id:0,name:'Part I',description:'Write Part I', category: 'home', done:true},
-    {id:1,name:'Part II',description:'Write Part II', category: 'home' done:false},
-    {id:2,name:'Part III',description:'Write Part III', category: 'home' done:false},
-    {id:3,name:'Part IV',description:'Write Part IV', category: 'work' done:false},
+    {id:1,name:'Part II',description:'Write Part II', category: 'home', done:false},
+    {id:2,name:'Part III',description:'Write Part III', category: 'home', done:false},
+    {id:3,name:'Part IV',description:'Write Part IV', category: 'work', done:false},
 ];
+
+var pg = require('knex')({
+  client: 'pg',
+  connection: process.env.PG_CONNECTION_STRING,
+  searchPath: ['knex', 'public'],
+});
 
 router.get('/',(req,res)=>{
   res.status(200)
     .json(inMemoryTodoDB);
+  var category = req.query.category;
+  if(category){
+    console.log(category);
+  }
+
 });
 
 module.exports = router;
 
 router.get('/:id',(req,res)=>{
+
+
 
   //var id = req.query.id; // This gets ?id= ... reconfigure for category
 

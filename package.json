@@ -6,6 +6,7 @@
     "author": "Andrew Rohne",
     "dependencies": {
         "body-parser": ">=1.5.2",
+        "dotenv": "^6.2.0",
         "express": "^4.16.4",
         "knex": ">=0.16.3",
         "method-override": ">=2.3.10",
@@ -13,5 +14,7 @@
     },
     "scripts": {
         "start": "node app/app.js"
-    }
+    },
+    "repository": "https://github.com/AndrewTheTM/ubertodoapi",
+    "license": "notsetyet"
 }
